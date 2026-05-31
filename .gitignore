@@ -47,6 +47,9 @@ CodeCoverage/
 ##ignore .vs
 *.vs
 
+##ignore Practice
+Practice/
+
 # MSBuild Binary and Structured Log
 *.binlog
 

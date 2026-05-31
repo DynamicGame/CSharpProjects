@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="01-TodoList/01-TodoList.csproj" Id="a97c4f8d-263d-450e-bbfe-98ac83c8ebe8" />
+  <Project Path="02-DiceRollGame/02-DiceRollGame.csproj" Id="892c9af9-bcfb-4a7c-a468-b50915d802d9" />
+  <Project Path="Practice/Practice.csproj" Id="2af67a28-6220-4b7a-a1c6-ecaf8b5e9f0d" />
 </Solution>

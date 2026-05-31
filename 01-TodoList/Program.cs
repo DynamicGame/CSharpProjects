@@ -40,6 +40,39 @@ What do you want to do?
     }
 
 }
+void PrintTodos()
+{
+    var index = 1;
+    if (todoList.Count > 0)
+    {
+        Console.WriteLine("Here are all your TODOs:");
+        foreach (var todo in todoList)
+        {
+            Console.WriteLine($"{index}. {todo}");
+            index++;
+        }
+
+    }
+    else
+    {
+        Console.WriteLine("No TODOs have been added yet");
+    }
+
+}
+
+void AddTodo()
+{
+    string userInput;
+
+    do
+    {
+        Console.WriteLine("Enter the TODO description: ");
+        userInput = Console.ReadLine()!;
+    } while (!IsTodoValid(userInput));
+    Console.WriteLine($"TODO successfully added: {userInput}");
+    todoList.Add(userInput);
+}
+
 
 void RemoveTodoByIndex()
 {
@@ -65,27 +98,15 @@ bool IsUserSelectedIndexValid(string input)
         Console.WriteLine("Selected index cannot be empty.");
         return false;
     }
-    else if (!int.TryParse(input, out var index) || index > todoList.Count)
+    else if (!int.TryParse(input, out var index) || index > todoList.Count || index < 0)
     {
         Console.WriteLine("The given index is not valid.");
         return false;
     }
-    else
-    {
-        return true;
-    }
-}
-void AddTodo()
-{
-    string userInput;
 
-    do
-    {
-        Console.WriteLine("Enter the TODO description: ");
-        userInput = Console.ReadLine()!;
-    } while (!IsTodoValid(userInput));
-    Console.WriteLine($"TODO successfully added: {userInput}");
-    todoList.Add(userInput);
+
+    return true;
+
 }
 
 bool IsTodoValid(string input)
@@ -100,31 +121,12 @@ bool IsTodoValid(string input)
         Console.WriteLine("The description already exists in the TODO list. Please try again.");
         return false;
     }
-    else
-    {
-        return true;
-    }
+
+    return true;
+
 
 }
 
-void PrintTodos()
-{
-    var index = 1;
-    if (todoList.Count > 0)
-    {
-        Console.WriteLine("Here are all your TODOs:");
-        foreach (var todo in todoList)
-        {
-            Console.WriteLine($"{index}. {todo}");
-            index++;
-        }
 
-    }
-    else
-    {
-        Console.WriteLine("No TODOs have been added yet");
-    }
-
-}
 
 Console.ReadKey();
