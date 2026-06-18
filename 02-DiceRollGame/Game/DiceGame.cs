@@ -1,4 +1,7 @@
-﻿public class DiceGame
+﻿
+namespace DiceRollGame.Game;
+
+public class DiceGame
 {
     private readonly Dice _dice;
     private const int MaxTries = 3;
@@ -19,11 +22,12 @@
         {
             Console.WriteLine("Enter number: ");
             var userInput = Console.ReadLine();
-            if (string.IsNullOrEmpty(userInput))
+            bool isValidNumber = int.TryParse(userInput, out userGuess);
+            if (string.IsNullOrEmpty(userInput) || !isValidNumber)
             {
                 Console.WriteLine("Incorrect input.");
                 continue;
-            }else if( !int.TryParse(userInput, out userGuess))
+            }else if( userGuess != _winningNumber)
             {
                 Console.WriteLine("Wrong number");
             }

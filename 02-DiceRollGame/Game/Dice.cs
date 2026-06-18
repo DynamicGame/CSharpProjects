@@ -1,4 +1,6 @@
-﻿public class Dice
+﻿
+namespace DiceRollGame.Game;
+public class Dice
 {
     private readonly Random _random ;
     public const int Sides = 6;

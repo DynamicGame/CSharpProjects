@@ -1,4 +1,6 @@
-﻿var diceGame = new DiceGame(new Dice(new Random()));
+﻿using DiceRollGame.Game;
+
+var diceGame = new DiceGame(new Dice(new Random()));
 var gameResult = diceGame.Play();
 diceGame.PrintResult(gameResult);
 
