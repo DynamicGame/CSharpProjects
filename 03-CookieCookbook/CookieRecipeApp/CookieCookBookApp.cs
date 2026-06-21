@@ -1,47 +1,35 @@
-﻿using _03_CookieCookbook.Ingredients;
-
-public class CookieCookBookApp
+﻿public class CookieCookBookApp
 {
-    private readonly string _path;
+  
     private readonly IRecipesUserInterator _recipesUserInteractor;
-    public CookieCookBookApp(string path, IRecipesUserInterator recipesManager)
+    private readonly IRecipesRepository _recipesRepository;
+    private readonly IUserInteractor _userInteractor;
+    public CookieCookBookApp(IRecipesUserInterator recipesManager, IRecipesRepository recipesRepository, IUserInteractor userInteractor)
     {
         _recipesUserInteractor = recipesManager;
-        _path = path;
+        _recipesRepository = recipesRepository;
+        _userInteractor = userInteractor;
+        
     }
-    public void Run()
+    public void Run(string filePath)
     {
-        _recipesUserInteractor.PrintExistingRecipes(_path);
+        var allRecipes = _recipesRepository.GetSavedRecipes(filePath)!.ToList();
+        _recipesUserInteractor.PrintExistingRecipes(allRecipes!);
         _recipesUserInteractor.PrompUserForRecipes();
+        var selectedIngredient = _recipesUserInteractor.GetUserSelectedIngredients();
+       
+        if (selectedIngredient!.Count == 0)
+        {
+            _userInteractor.WriteLine("No ingredients have been selected. Recipe will not be saved.");
+            
+        }
+        _userInteractor.WriteLine("Recipe added:");
+        _recipesUserInteractor.PrintSingleRecipe(selectedIngredient);
+        var recipe = new Recipe();
+        recipe.Ingredients = selectedIngredient;
+        allRecipes.Add(recipe);
+        _recipesRepository.SaveRecipe(filePath, allRecipes!);
         _recipesUserInteractor.ShowExitMessage();
     }
 
-}
-
-
-public class RecipesUserInteractor : IRecipesUserInterator
-{
-    private readonly IUserInteractor _userInteractor;
-    private readonly IIngredientFactory _ingredientFactory;
-    private readonly IStringsRepository _stringRepository;
-    public RecipesUserInteractor(IUserInteractor userInteractor, IIngredientFactory ingredientFactory, IStringsRepository stringRepository)
-    {
-        _userInteractor = userInteractor;
-        _ingredientFactory = ingredientFactory;
-        _stringRepository = stringRepository;
-    }
-    public void PrintExistingRecipes(string path)
-    {
-        
-    }
-
-    public void PrompUserForRecipes()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void ShowExitMessage()
-    {
-        throw new NotImplementedException();
-    }
 }

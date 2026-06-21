@@ -8,12 +8,3 @@ namespace _03_CookieCookbook.FileAccess;
     {
         txt, json
     }
-
-public class DataRepository
-{
-   
-    public void Read(string filePath)
-    {
-        var content = File.ReadAllText(filePath);
-    }
-}

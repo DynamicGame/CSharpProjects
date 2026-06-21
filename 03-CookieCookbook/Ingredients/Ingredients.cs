@@ -21,7 +21,7 @@ public class Ingredients : IIngredientFactory
     }
     public Ingredient GetByID(int id)
     {
-        return _ingredients.FirstOrDefault(x => x.ID == id) ?? throw new ArgumentException($"Ingredient with ID {id} not found.");
+        return _ingredients.FirstOrDefault(x => x.ID == id)!;
     }
 
     public IEnumerable<Ingredient> GetAllIngredients()
@@ -31,6 +31,8 @@ public class Ingredients : IIngredientFactory
 
     public void PrintAvailableIngredients()
     {
+        _ingredients.Sort((x, y) => x.ID.CompareTo(y.ID));
+
         _ingredients.ForEach(ingredient => _userInteractor.WriteLine($"{ingredient.ID}. {ingredient.Name}"));
     }
 }
