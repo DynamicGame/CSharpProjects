@@ -2,6 +2,6 @@
 
 public interface IRecipesRepository
 {
-    IEnumerable<Recipe>? GetSavedRecipes(string path);
+    IEnumerable<Recipe> GetSavedRecipes(string path);
     void SaveRecipe(string path, List<Recipe> selectedIngredients);
 }

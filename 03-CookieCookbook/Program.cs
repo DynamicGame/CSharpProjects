@@ -2,7 +2,7 @@
 using _03_CookieCookbook.Ingredients;
 
 
-var fileFormat = FileFormat.json;
+var fileFormat = FileFormat.txt;
 var path = fileFormat.GetFormat();
 StringsRepository repository = fileFormat.GetRepository();
 var userInteractor = new ConsoleUserInteractor();
@@ -17,4 +17,4 @@ app.Run(path);
 
 
 
-Console.ReadKey();
+

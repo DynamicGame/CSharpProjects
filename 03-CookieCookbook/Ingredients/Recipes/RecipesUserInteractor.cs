@@ -13,7 +13,7 @@ public class RecipesUserInteractor : IRecipesUserInterator
     }
     public void PrintExistingRecipes(IEnumerable<Recipe> recipes)
     {
-        if(recipes == null)
+        if(recipes.Count() == 0)
         {
             return;
         }
@@ -83,6 +83,7 @@ public class RecipesUserInteractor : IRecipesUserInterator
     public void ShowExitMessage()
     {
         _userInteractor.WriteLine("Press any key exit.");
+        Console.ReadKey();
     }
 
     public List<Ingredient>? GetUserSelectedIngredients()

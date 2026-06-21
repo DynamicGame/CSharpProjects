@@ -13,31 +13,31 @@ public class RecipesRepository : IRecipesRepository
         _ingredientFactory = ingredientFactory;
     }
 
-    public IEnumerable<Recipe>? GetSavedRecipes(string path)
+    public IEnumerable<Recipe> GetSavedRecipes(string path)
     {
         var savedIngredientsId = _stringsRepository.GetAll(path);
-        if (savedIngredientsId is null)
+        if (savedIngredientsId.Count() == 0)
         {
             return new List<Recipe>();
         }
 
-        var ids = GetIdFromSaves(savedIngredientsId);
+        var recipes = GetRecipesFromSaveID(savedIngredientsId);
 
-        return ids;
+        return recipes;
     }
 
-    private List<Recipe> GetIdFromSaves(IEnumerable<string> savedIngredientsId)
+    private List<Recipe> GetRecipesFromSaveID(IEnumerable<string> savedIngredientsId)
     {
         
         var recipes = new List<Recipe>();
-        foreach (var ingredientsId in savedIngredientsId)
+        foreach (var singleRecipeIds in savedIngredientsId)
         {
             var ingredient = new List<Ingredient>();
-            foreach (var singleRecipe in ingredientsId)
+            foreach (var singleRecipeId in singleRecipeIds)
             {
-                if(singleRecipe != ',')
+                if(singleRecipeId != ',')
                 {
-                    ingredient.Add(_ingredientFactory.GetByID(int.Parse(singleRecipe.ToString())));
+                    ingredient.Add(_ingredientFactory.GetByID(int.Parse(singleRecipeId.ToString())));
                 }
             }
             var recipe = new Recipe();

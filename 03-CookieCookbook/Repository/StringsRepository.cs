@@ -2,14 +2,14 @@
 
 public abstract class StringsRepository : IStringsRepository
 {
-    public IEnumerable<string>? GetAll(string path)
+    public IEnumerable<string> GetAll(string path)
     {
         if (File.Exists(path))
         {
             var content = File.ReadAllText(path);
             return TextToStrings(content);
         }
-        return null;
+        return new List<string>();
 
     }
 
