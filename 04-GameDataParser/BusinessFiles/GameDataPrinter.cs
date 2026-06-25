@@ -1,4 +1,7 @@
-﻿public class GameDataPrinter : IGameDataPrinter
+﻿
+using _04_GameDataParser.UserInteractorFiles;
+
+public class GameDataPrinter : IGameDataPrinter
 {
     private readonly IUserInteractor _userInteractor;
     public GameDataPrinter(IUserInteractor userInteractor)
