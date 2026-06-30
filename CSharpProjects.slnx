@@ -4,6 +4,8 @@
   <Project Path="03-CookieCookbook/03-CookieCookbook.csproj" Id="e43e071d-d547-4818-b163-a6398681ddf7" />
   <Project Path="04-GameDataParser/04-GameDataParser.csproj" />
   <Project Path="05-CustomCache/05-CustomCache.csproj" />
-  <Project Path="06-CookieCookbook/CookieCookbook.csproj" />
+  <Project Path="06-CookieCookbook/06-CookieCookbook.csproj" />
+  <Project Path="07-NetUnderTheHoodAssignment/07-NetUnderTheHoodAssignment.csproj" />
+  <Project Path="08-StarWarsPlanetStats/08-StarWarsPlanetStats.csproj" Id="a21138c2-05ef-43c3-bac6-39d50f9cea0e" />
   <Project Path="Practice/Practice.csproj" Id="2af67a28-6220-4b7a-a1c6-ecaf8b5e9f0d" />
 </Solution>
