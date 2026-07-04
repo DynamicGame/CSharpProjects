@@ -1,5 +1,11 @@
 ﻿
 using _08_StarWarsPlanetStats;
+using _08_StarWarsPlanetStats.ApiReaderFiles;
+using _08_StarWarsPlanetStats.App;
+using _08_StarWarsPlanetStats.ApplicationInteractor;
+using _08_StarWarsPlanetStats.DataPrinterFiles;
+using _08_StarWarsPlanetStats.JsonDesrializerFiles;
+using _08_StarWarsPlanetStats.Model;
 using System.Text.Json;
 
 var baseAddress = $"https://swapi.info/api/";

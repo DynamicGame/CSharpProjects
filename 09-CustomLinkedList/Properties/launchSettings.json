@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "09-CustomLinkedList": {
+      "commandName": "Project",
+      "hotReloadEnabled": false
+    }
+  }
+}
