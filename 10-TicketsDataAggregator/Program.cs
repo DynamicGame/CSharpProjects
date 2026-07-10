@@ -1,6 +1,10 @@
 ﻿
 
 using _10_TicketsDataAggregator;
+using _10_TicketsDataAggregator.App;
+using _10_TicketsDataAggregator.FileWriter;
+using _10_TicketsDataAggregator.PdfReaderFiles;
+using _10_TicketsDataAggregator.TicketsReader;
 using _10_TicketsDataAggregator.UserInteractor;
 
 var folderPath = @"C:\Users\abdul\OneDrive\Documents\github c#\CSharpProjects\10-TicketsDataAggregator\bin\Debug\net10.0\Tickets";

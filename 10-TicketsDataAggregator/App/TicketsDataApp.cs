@@ -1,11 +1,12 @@
 ﻿using _10_TicketsDataAggregator.FileWriter;
 using _10_TicketsDataAggregator.PdfReaderFiles;
+using _10_TicketsDataAggregator.TicketsReader;
 using _10_TicketsDataAggregator.UserInteractor;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace _10_TicketsDataAggregator
+namespace _10_TicketsDataAggregator.App
 {
     internal class TicketsDataApp
     {

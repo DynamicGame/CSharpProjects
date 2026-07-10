@@ -1,6 +1,6 @@
 ﻿using _10_TicketsDataAggregator.DTO;
 
-namespace _10_TicketsDataAggregator
+namespace _10_TicketsDataAggregator.TicketsReader
 {
     internal class TicketsDataReader : ITicketsDataReader
     {
