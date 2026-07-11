@@ -10,5 +10,7 @@
   <Project Path="09-CustomLinkedList/09-CustomLinkedList.csproj" Id="2b1ab175-e129-4b5a-9cd7-394597b1dfe1" />
   <Project Path="10-TicketsDataAggregator/10-TicketsDataAggregator.csproj" />
   <Project Path="11-NumericTypesSuggester/11-NumericTypesSuggester.csproj" Id="bfeb4ce6-b87e-46aa-a84d-1b5a730624a6" />
+  <Project Path="FibonacciGenerator/FibonacciGenerator.csproj" Id="cdb77d38-139b-4207-857e-64e8d507b9d0" />
+  <Project Path="FibonacciGeneratorTests/FibonacciGeneratorTests.csproj" Id="031b8e99-de62-49a9-a609-1222aa4d58b3" />
   <Project Path="Practice/Practice.csproj" Id="2af67a28-6220-4b7a-a1c6-ecaf8b5e9f0d" />
 </Solution>
