@@ -7,8 +7,18 @@ namespace FibonacciGeneratorTests
     public class FibonnacciTests
     {
         [TestCase(-1)]
+        [TestCase(-10)]
+        [TestCase(-100)]
+        public void Generate_ShallThrowArgumentException_WhenInputIsLessThanZero(int input)
+        {
+            Assert.Throws<ArgumentException>(() => Fibonacci.Generate(input));
+        }
+
+
         [TestCase(47)]
-        public void Generate_ShallThrowArgumentException_WhenInputIsLessThanZeroAndGreaterThan46(int input)
+        [TestCase(100)]
+        [TestCase(1000)]
+        public void Generate_ShallThrowArgumentException_WhenInputIsGreaterThan46(int input)
         {
             Assert.Throws<ArgumentException>(() => Fibonacci.Generate(input));
         }

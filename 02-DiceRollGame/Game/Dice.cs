@@ -1,11 +1,12 @@
 ﻿
 namespace DiceRollGame.Game;
-public class Dice
+
+public class Dice : IDice
 {
-    private readonly Random _random ;
+    private readonly IRandom _random;
     public const int Sides = 6;
 
-    public Dice(Random random)
+    public Dice(IRandom random)
     {
         _random = random;
     }
