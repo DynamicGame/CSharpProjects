@@ -4,13 +4,13 @@ using _04_GameDataParser.UserInteractorFiles;
 
 namespace _04_GameDataParser.App;
 
-public class GameDataParser
+public class GameDataParserApp
 {
     private readonly IUserInteractor _userInteractor;
     private readonly IGameDataReader _gameDataReader;
     private readonly IGameDataPrinter _gameDataPrinter;
 
-    public GameDataParser(IUserInteractor userInteractor, IGameDataReader gameDataReader, IGameDataPrinter gameDataPrinter)
+    public GameDataParserApp(IUserInteractor userInteractor, IGameDataReader gameDataReader, IGameDataPrinter gameDataPrinter)
     {
         _userInteractor = userInteractor;
         _gameDataReader = gameDataReader;
@@ -18,7 +18,7 @@ public class GameDataParser
     }
     public void Run()
     {
-        _userInteractor.WriteLine("Enter the name of the file you want to read: ");
+        _userInteractor.WriteLine(Resource.EnterFileNameMessage);
         
         var validFileName = _userInteractor.ReadValidFilePath();
         var gameData = _gameDataReader.Read(validFileName);

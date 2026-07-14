@@ -4,6 +4,7 @@
   <Project Path="02-DiceRollGameTests/02-DiceRollGameTests.csproj" Id="1d7e4a7e-ffe5-4186-9071-81090ab767a6" />
   <Project Path="03-CookieCookbook/03-CookieCookbook.csproj" Id="e43e071d-d547-4818-b163-a6398681ddf7" />
   <Project Path="04-GameDataParser/04-GameDataParser.csproj" />
+  <Project Path="04-GameDataParserTests/04-GameDataParserTests.csproj" Id="7c920785-b79e-488e-8057-f3e663c2a969" />
   <Project Path="05-CustomCache/05-CustomCache.csproj" />
   <Project Path="06-CookieCookbook/06-CookieCookbook.csproj" />
   <Project Path="07-NetUnderTheHoodAssignment/07-NetUnderTheHoodAssignment.csproj" />

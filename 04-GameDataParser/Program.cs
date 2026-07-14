@@ -13,7 +13,7 @@ try
     var gameDataReposiotry = new GameDataReader(dataRepository, jsonDeserializer);
 
 
-    var gameDataParserApp = new GameDataParser(userInteractor, gameDataReposiotry, gameDataPrinter);
+    var gameDataParserApp = new GameDataParserApp(userInteractor, gameDataReposiotry, gameDataPrinter);
 
     gameDataParserApp.Run();
 }
